@@ -1,0 +1,13 @@
+version: '3.5'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./ci/local/golang/Dockerfile
+      args:
+        UID: "${uid}"
+        GID: "${gid}"
+    ports:
+      - "8077:8077"
+#    volumes:
+#    - .:/go/github.com/short-url
